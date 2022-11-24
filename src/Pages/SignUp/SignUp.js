@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
 
-  const { createUser } = useContext(AuthContext)
+  const { createUser, signInWithGoogle } = useContext(AuthContext)
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [signUpError, setSignUpError] = useState('')
@@ -16,6 +17,7 @@ const SignUp = () => {
       .then(result => {
         const user = result.user;
         console.log(user)
+        toast.success('User Created Successfully')
       })
       .catch(err => {
         console.error(err.message)
@@ -82,7 +84,7 @@ const SignUp = () => {
         </form>
         <p className='py-2 text-center'>Already have an account? <Link to='/login' className='text-primary'>Please Login</Link></p>
         <div className="divider">OR</div>
-        <button className='btn w-full'>Login With Google</button>
+        <button onClick={signInWithGoogle} className='btn w-full'>Login With Google</button>
       </div>
     </div>
   );
