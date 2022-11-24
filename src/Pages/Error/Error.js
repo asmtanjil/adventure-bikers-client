@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import error from '../../assets/error.jpg'
 
 const Error = () => {
   return (
     <div className='mx-auto my-72 text-center flex justify-center'>
       <div className='border-r-2 border-slate-500 w-full'>
         <div>
-          {/* <img src={error} alt="" /> */}
+          <img src={error} alt="" />
         </div>
       </div>
 
