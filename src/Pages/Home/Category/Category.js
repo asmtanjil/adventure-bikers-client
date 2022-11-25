@@ -19,13 +19,15 @@ const Category = () => {
   }
 
   return (
-    <div>
-      {
-        categories && categories.map(category => <CategoryCard
-          key={category._id}
-          category={category}
-        ></CategoryCard>)
-      }
+    <div className='my-12 mx-auto'>
+      <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+        {
+          categories && categories.map(category => <CategoryCard
+            key={category._id}
+            category={category}
+          ></CategoryCard>)
+        }
+      </div>
     </div>
   );
 };
