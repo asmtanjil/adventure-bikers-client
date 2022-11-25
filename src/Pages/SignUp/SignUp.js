@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
@@ -10,6 +10,8 @@ const SignUp = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [signUpError, setSignUpError] = useState('')
+
+  const navigate = useNavigate()
 
   const handleSignUp = data => {
     setSignUpError('')
@@ -24,6 +26,7 @@ const SignUp = () => {
         updateUser(userInfo)
           .then(() => {
             saveUser(data?.name, data?.email, data?.role)
+            navigate('/')
           })
           .catch(err => console.error(err))
       })
@@ -95,8 +98,8 @@ const SignUp = () => {
             <select type='text'
               {...register("role")}
               className="select input-bordered input-info w-full max-w-xs">
-              <option>Buyer</option>
-              <option>Seller</option>
+              <option>buyer</option>
+              <option>seller</option>
             </select>
           </div>
 

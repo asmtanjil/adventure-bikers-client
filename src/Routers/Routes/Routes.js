@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
+import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Products from "../../Pages/Products/Products";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +24,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           return fetch(`http://localhost:5000/products/${params.id}`)
         },
-        element: <Products></Products>
+        element: <PrivateRouter><Products></Products></PrivateRouter>
       },
       {
         path: '/signup',
@@ -34,6 +37,16 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      }
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>,
+    children: [
+      {
+        path: '/dashboard/addProduct',
+        element: <AddProduct></AddProduct>
       }
     ]
   },
