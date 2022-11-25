@@ -1,0 +1,11 @@
+[
+  {
+    "_id": 1,
+    "image": "",
+    "bikeName": "",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": ""
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "category_id": 1,
+    "name": "Sports Bike",
+    "image": "https://i.ibb.co/BGLDnZL/sports.jpg",
+    "price": "200000-350000",
+    "message": "Here is some collections of sports bike"
+  },
+  {
+    "category_id": 2,
+    "name": "Off Road",
+    "image": "https://i.ibb.co/ZHxxtQw/offRoad.jpg",
+    "price": "150000-350000",
+    "message": "Do you need a bike for a off roading trip? Then visit Here"
+  },
+  {
+    "category_id": 3,
+    "name": "Cruise Bikes",
+    "image": "https://i.ibb.co/XCKCs7c/cruiser.jpg",
+    "price": "150000-240000",
+    "message": "Do you like relaxing bike? Then go for this one"
+  }
+]
