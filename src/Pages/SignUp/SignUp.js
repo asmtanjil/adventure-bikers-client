@@ -6,7 +6,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
 
-  const { createUser, signInWithGoogle } = useContext(AuthContext)
+  const { createUser, signInWithGoogle, updateUser } = useContext(AuthContext)
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [signUpError, setSignUpError] = useState('')
@@ -18,10 +18,31 @@ const SignUp = () => {
         const user = result.user;
         console.log(user)
         toast.success('User Created Successfully')
+        const userInfo = {
+          displayName: data.name
+        }
+        updateUser(userInfo)
+          .then(() => {
+            saveUser(data?.name, data?.email, data?.role)
+          })
+          .catch(err => console.error(err))
       })
-      .catch(err => {
-        console.error(err.message)
+      .catch(error => {
+        console.error(error.message)
       })
+  }
+
+  const saveUser = (name, email, role) => {
+    const user = { name, email, role }
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
   return (
@@ -70,9 +91,9 @@ const SignUp = () => {
 
 
           <div className="form-control w-full">
-            <label className="label"><span className="label-text">User Type</span></label>
+            <label className="label"><span className="label-text">Select User Type</span></label>
             <select type='text'
-              {...register("userType")}
+              {...register("role")}
               className="select input-bordered input-info w-full max-w-xs">
               <option>Buyer</option>
               <option>Seller</option>
