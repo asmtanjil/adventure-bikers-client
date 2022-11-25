@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Loading from '../../../Loading/Loading';
 import CategoryCard from './CategoryCard';
 
 const Category = () => {
@@ -12,6 +13,10 @@ const Category = () => {
       return data;
     }
   })
+
+  if (isLoading) {
+    return <Loading></Loading>
+  }
 
   return (
     <div>
