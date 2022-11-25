@@ -16,7 +16,7 @@ const BannerImages = ({ bannerItem }) => {
               </h1>
             </div> */}
       <div className="absolute flex justify-start w-4/5 transform -translate-y-1/2 left-24 top-1/2">
-        <p className='text-white text-3xl'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+        <p className='text-white text-lg lg:text-2xl'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
       </div>
 
       {/* <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4">
