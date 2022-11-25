@@ -19,8 +19,8 @@ const Category = () => {
   }
 
   return (
-    <div className='my-12 mx-auto'>
-      <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    <div className='my-12 mx-auto flex justify-center'>
+      <div className='grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
           categories && categories.map(category => <CategoryCard
             key={category._id}

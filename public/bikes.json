@@ -1,11 +1,83 @@
 [
   {
-    "_id": 1,
-    "image": "",
-    "bikeName": "",
+    "category_id": "6380d41813f3e2d04fc1e1bc",
+    "image": "https://i.ibb.co/KWnsnWz/s1.jpg",
+    "bikeName": "Yamaha",
     "resalePrice": 50000,
     "marketPrice": 80000,
     "used": "2 years",
-    "sellerName": ""
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1bc",
+    "image": "https://i.ibb.co/KWnsnWz/s1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1bc",
+    "image": "https://i.ibb.co/KWnsnWz/s1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1bd",
+    "image": "https://i.ibb.co/7KYR1G1/c1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1bd",
+    "image": "https://i.ibb.co/7KYR1G1/c1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1bd",
+    "image": "https://i.ibb.co/7KYR1G1/c1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1be",
+    "image": "https://i.ibb.co/n6MwBvw/n1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1be",
+    "image": "https://i.ibb.co/n6MwBvw/n1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
+  },
+  {
+    "category_id": "6380d41813f3e2d04fc1e1be",
+    "image": "https://i.ibb.co/n6MwBvw/n1.jpg",
+    "bikeName": "Yamaha",
+    "resalePrice": 50000,
+    "marketPrice": 80000,
+    "used": "2 years",
+    "sellerName": "Tanjil"
   }
 ]
