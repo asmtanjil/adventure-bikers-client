@@ -1,23 +1,20 @@
 [
   {
-    "category_id": 1,
-    "name": "Sports Bike",
+    "bikeType": "Sports",
     "image": "https://i.ibb.co/XZRmhfb/sports.jpg",
-    "price": "200000-350000",
-    "message": "Here is some collections of sports bike"
+    "price": "400000",
+    "details": "Here is some collections of sports bike. if you are a sport bikes lover then go for it"
   },
   {
-    "category_id": 2,
-    "name": "Off Road",
-    "image": "https://i.ibb.co/ZHxxtQw/offRoad.jpg",
+    "bikeType": "Standard",
+    "image": "https://i.ibb.co/X2g7TkR/nadek-Version.jpg",
     "price": "150000-350000",
-    "message": "Do you need a bike for a off roading trip? Then visit Here"
+    "details": "Do you need a standard bike? Or are you looking for a normal riding bike? Visit Here"
   },
   {
-    "category_id": 3,
-    "name": "Cruise Bikes",
+    "bikeType": "Cruiser",
     "image": "https://i.ibb.co/XCKCs7c/cruiser.jpg",
-    "price": "150000-240000",
-    "message": "Do you like relaxing bike? Then go for this one"
+    "price": "30000",
+    "details": "Do you like cruiser bike or you wanna ride in mood? Then check your desired bikes"
   }
 ]

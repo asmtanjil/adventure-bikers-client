@@ -103,7 +103,7 @@ const SignUp = () => {
             </select>
           </div>
 
-          <input className='btn btn-info w-full mt-4' type="submit" value="Sign Up" />
+          <input className='btn btn-info w-full mt-4 text-white' type="submit" value="Sign Up" />
           {signUpError && <p className='text-red-500'>{signUpError}</p>}
         </form>
         <p className='py-2 text-center'>Already have an account? <Link to='/login' className='text-primary'>Please Login</Link></p>

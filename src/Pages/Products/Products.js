@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 const Products = () => {
   const products = useLoaderData()
   return (
-    <div className='my-12'>
+    <div className='my-12 flex justify-center'>
       <div className='grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
           products && products.map(product => <ProductCard

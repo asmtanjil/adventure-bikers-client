@@ -9,6 +9,7 @@ const AddProduct = () => {
   const imageHostKey = process.env.REACT_APP_ImageHostKey;
   const { user } = useContext(AuthContext)
   const navigate = useNavigate()
+  const time = new Date().toLocaleString()
 
 
   const handleAddProduct = data => {
@@ -28,13 +29,15 @@ const AddProduct = () => {
           const product = {
             image: imageData.data.url,
             bikeName: data.bikeName,
+            bikeType: data.bikeType,
             resalePrice: data.resalePrice,
             marketPrice: data.marketPrice,
             condition: data.condition,
             phone: data.phone,
             location: data.location,
             year: data.year,
-            sellerName: user?.displayName
+            sellerName: user?.displayName,
+            time: time
           }
           fetch('http://localhost:5000/products', {
             method: "POST",
@@ -63,13 +66,25 @@ const AddProduct = () => {
         <form onSubmit={handleSubmit(handleAddProduct)} className='w-96 p-8'>
 
           <div className="form-control w-full">
-            <label className="label"><span className="label-text">Bike Brand</span></label>
+            <label className="label"><span className="label-text">Select Your Bike type</span></label>
+            <select
+              {...register("bikeType", { required: "Type is required" })}
+              className="select select-bordered w-full">
+              <option>Please Select your Bike Type</option>
+              <option>Sports</option>
+              <option>Cruiser</option>
+              <option>Standard</option>
+            </select>
+          </div>
+
+          <div className="form-control w-full">
+            <label className="label"><span className="label-text">Bike Model and Brand</span></label>
             <input
               type="text"
-              {...register("bikeName", { required: "Name is required" })}
+              {...register("bikeName", { required: "Model is required" })}
               className="input input-bordered w-full"
             />
-            {errors.name && <p className='text-red-500' role="alert">{errors.name?.message}</p>}
+            {errors.bikeName && <p className='text-red-500' role="alert">{errors.bikeName?.message}</p>}
           </div>
 
 

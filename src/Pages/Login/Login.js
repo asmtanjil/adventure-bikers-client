@@ -63,7 +63,7 @@ const Login = () => {
           </div>
 
 
-          <input className='btn btn-info w-full mt-4' type="submit" value="Login" />
+          <input className='btn btn-info w-full mt-4 text-white' type="submit" value="Login" />
           {loginError && <p className='text-red-500'>{loginError}</p>}
         </form>
         <p className='py-2 text-center'>Are you new here? <Link to='/signup' className='text-primary'>Please Register</Link></p>
