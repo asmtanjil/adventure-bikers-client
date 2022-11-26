@@ -3,6 +3,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
+import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
 import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard/myOrders',
-        element: <AddProduct></AddProduct>
+        element: <MyOrders></MyOrders>
       },
     ]
   },

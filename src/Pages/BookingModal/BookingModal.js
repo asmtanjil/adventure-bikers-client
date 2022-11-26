@@ -25,7 +25,7 @@ const BookingModal = ({ product }) => {
     }
     console.log(booking)
 
-    fetch('http://localhost:5000/orders', {
+    fetch('http://localhost:5000/bookings', {
       method: "POST",
       headers: {
         'content-type': 'application/json'
