@@ -1,8 +1,11 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+
+const googleProvider = new GoogleAuthProvider()
 
 const SignUp = () => {
 
@@ -12,6 +15,8 @@ const SignUp = () => {
   const [signUpError, setSignUpError] = useState('')
 
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
 
   const handleSignUp = data => {
     setSignUpError('')
@@ -46,6 +51,20 @@ const SignUp = () => {
     })
       .then(res => res.json())
       .then(data => console.log(data))
+  }
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        toast.success('Logged in With Google')
+        navigate(from, { replace: true })
+      })
+      .catch(error => {
+        console.error(error);
+      })
+
   }
 
   return (
@@ -108,7 +127,7 @@ const SignUp = () => {
         </form>
         <p className='py-2 text-center'>Already have an account? <Link to='/login' className='text-primary'>Please Login</Link></p>
         <div className="divider">OR</div>
-        <button onClick={signInWithGoogle} className='btn w-full'>Login With Google</button>
+        <button onClick={handleGoogleSignUp} className='btn w-full'>Login With Google</button>
       </div>
     </div>
   );

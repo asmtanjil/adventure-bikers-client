@@ -30,6 +30,11 @@ const AllSellers = () => {
   }
 
 
+  const handleVerifySeller = seller => {
+
+  }
+
+
   if (isLoading) {
     return <Loading></Loading>
   }
@@ -56,7 +61,9 @@ const AllSellers = () => {
               <td><button
                 onClick={() => handleDeleteSeller(seller)}
                 className='btn btn-xs btn-error text-white'>Delete Seller</button></td>
-              <td><button className='btn btn-xs btn-accent'>Verify Seller</button></td>
+              <td><button
+                onClick={() => handleVerifySeller(seller)}
+                className='btn btn-xs btn-accent'>Verify Seller</button></td>
             </tr>)
           }
         </tbody>

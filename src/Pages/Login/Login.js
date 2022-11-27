@@ -1,8 +1,11 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+
+const googleProvider = new GoogleAuthProvider()
 
 const Login = () => {
 
@@ -27,6 +30,20 @@ const Login = () => {
         console.error(err.message)
         setLoginError(err.message)
       })
+  }
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        toast.success('Logged in With Google')
+        navigate(from, { replace: true })
+      })
+      .catch(error => {
+        console.error(error);
+      })
+
   }
 
   return (
@@ -68,7 +85,7 @@ const Login = () => {
         </form>
         <p className='py-2 text-center'>Are you new here? <Link to='/signup' className='text-primary'>Please Register</Link></p>
         <div className="divider">OR</div>
-        <button onClick={signInWithGoogle} className='btn w-full'>Login With Google</button>
+        <button onClick={handleGoogleSignUp} className='btn w-full'>Login With Google</button>
       </div>
     </div>
   );
