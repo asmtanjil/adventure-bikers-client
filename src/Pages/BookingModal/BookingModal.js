@@ -2,15 +2,15 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
-const BookingModal = ({ product }) => {
-  const { bikeName, resalePrice, image } = product;
+const BookingModal = ({ setBooking, booking }) => {
+  const { bikeName, resalePrice, image } = booking;
+  console.log(booking)
   const { user } = useContext(AuthContext)
 
   const handleBooking = event => {
     event.preventDefault()
     const form = event.target;
 
-    const email = form.email.value;
     const phone = form.phone.value;
     const location = form.location.value;
 
@@ -18,12 +18,11 @@ const BookingModal = ({ product }) => {
       bikeName,
       resalePrice,
       name: user?.displayName,
-      email,
+      email: user?.email,
       image,
       phone,
       location
     }
-    console.log(booking)
 
     fetch('http://localhost:5000/bookings', {
       method: "POST",
@@ -37,6 +36,7 @@ const BookingModal = ({ product }) => {
         console.log(data)
         if (data.acknowledged) {
           toast.success(`You have successfully booked ${bikeName}`)
+          setBooking(null)
           form.reset()
         }
       })
@@ -46,7 +46,7 @@ const BookingModal = ({ product }) => {
     <div>
       <input type="checkbox" id="bike-Booking-Modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box">
           <h2 className='text-xl'>You are going to order this bike</h2>
           <label htmlFor="bike-Booking-Modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
           <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-6'>
@@ -72,9 +72,11 @@ const BookingModal = ({ product }) => {
             </div>
 
             <input name='phone' type="text" placeholder="Enter Your Contact Number" className="input w-full input-bordered" required />
+
             <input name='location' type="text" placeholder="Meeting Location" className="input w-full input-bordered" required />
 
             <input className='btn btn-accent w-full text-white' type="submit" value="Submit" />
+            {/* <label htmlFor="bike-Booking-Modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label> */}
           </form>
 
         </div>

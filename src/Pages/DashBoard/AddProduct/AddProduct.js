@@ -37,6 +37,7 @@ const AddProduct = () => {
             location: data.location,
             year: data.year,
             sellerName: user?.displayName,
+            email: user?.email,
             time: time
           }
           fetch('http://localhost:5000/products', {

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from '../BookingModal/BookingModal';
 import ProductCard from './ProductCard';
 
 const Products = () => {
+  const [booking, setBooking] = useState(null)
   const products = useLoaderData()
   return (
     <div className='my-12 flex justify-center'>
@@ -11,9 +13,17 @@ const Products = () => {
           products && products.map(product => <ProductCard
             key={product._id}
             product={product}
+            setBooking={setBooking}
           ></ProductCard>)
         }
       </div>
+      {
+        booking &&
+        <BookingModal
+          booking={booking}
+          setBooking={setBooking}
+        ></BookingModal>
+      }
     </div>
   );
 };

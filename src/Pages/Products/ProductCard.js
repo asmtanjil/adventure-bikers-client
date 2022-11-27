@@ -1,8 +1,9 @@
-import React from 'react';
-import BookingModal from '../BookingModal/BookingModal';
+// import BookingModal from "../BookingModal/BookingModal";
 
-const ProductCard = ({ product }) => {
+
+const ProductCard = ({ product, setBooking }) => {
   const { image, bikeName, sellerName, condition, phone, location, year, resalePrice, marketPrice, time } = product;
+
   return (
     <div className="card w-90 md:w-96 lg:w-100 bg-amber-50 shadow-xl">
       <figure className='p-4'>
@@ -19,14 +20,12 @@ const ProductCard = ({ product }) => {
         <p><span className='font-semibold'>Phone: </span>{phone}</p>
         <p><span className='font-semibold'>Posted on: </span>{time}</p>
         <div className="card-actions justify-end">
-          <label htmlFor="bike-Booking-Modal" className="btn btn-accent text-white">Book Now</label>
+          <label
+            onClick={() => setBooking(product)}
+            htmlFor="bike-Booking-Modal"
+            className="btn btn-accent text-white">Book Now</label>
         </div>
       </div>
-      {
-        product && <BookingModal
-          product={product}
-        ></BookingModal>
-      }
     </div>
   );
 };
