@@ -31,7 +31,16 @@ const AllSellers = () => {
 
 
   const handleVerifySeller = seller => {
-
+    fetch(`http://localhost:5000/verifySeller/${seller.email}`, {
+      method: "PUT"
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.modifiedCount > 0) {
+          toast.success(`${seller.name} is now a verified seller`)
+          refetch()
+        }
+      })
   }
 
 
@@ -61,9 +70,13 @@ const AllSellers = () => {
               <td><button
                 onClick={() => handleDeleteSeller(seller)}
                 className='btn btn-xs btn-error text-white'>Delete Seller</button></td>
-              <td><button
-                onClick={() => handleVerifySeller(seller)}
-                className='btn btn-xs btn-accent'>Verify Seller</button></td>
+              {
+                seller?.isVerified !== 'true' && <>
+                  <td><button
+                    className='btn btn-xs btn-accent text-white'
+                    onClick={() => handleVerifySeller(seller)}>Verify</button></td>
+                </>
+              }
             </tr>)
           }
         </tbody>

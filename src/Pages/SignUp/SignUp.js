@@ -19,15 +19,19 @@ const SignUp = () => {
   const from = location.state?.from?.pathname || '/';
 
   const handleSignUp = data => {
+
     setSignUpError('')
+
     createUser(data.email, data.password)
       .then(result => {
         const user = result.user;
         console.log(user)
         toast.success('User Created Successfully')
+
         const userInfo = {
           displayName: data.name
         }
+
         updateUser(userInfo)
           .then(() => {
             saveUser(data?.name, data?.email, data?.role)
@@ -40,6 +44,7 @@ const SignUp = () => {
       })
   }
 
+  //Save User to Database
   const saveUser = (name, email, role) => {
     const user = { name, email, role }
     fetch('http://localhost:5000/users', {
@@ -53,6 +58,8 @@ const SignUp = () => {
       .then(data => console.log(data))
   }
 
+
+  //Sign In With Google
   const handleGoogleSignUp = () => {
     signInWithGoogle(googleProvider)
       .then(result => {
