@@ -4,7 +4,6 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const BookingModal = ({ setBooking, booking }) => {
   const { bikeName, resalePrice, image } = booking;
-  console.log(booking)
   const { user } = useContext(AuthContext)
 
   const handleBooking = event => {

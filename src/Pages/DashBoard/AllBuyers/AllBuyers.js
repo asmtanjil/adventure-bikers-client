@@ -47,7 +47,9 @@ const AllBuyers = () => {
           </thead>
           <tbody>
             {
-              buyers && buyers.map((buyer, i) => <tr>
+              buyers && buyers.map((buyer, i) => <tr
+                key={buyer._id}
+              >
                 <th>{i + 1}</th>
                 <td>{buyer.name}</td>
                 <td>{buyer.email}</td>
