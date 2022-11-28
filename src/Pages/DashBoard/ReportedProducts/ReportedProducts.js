@@ -22,7 +22,7 @@ const ReportedProducts = () => {
       .then(data => {
         if (data.deletedCount > 0) {
           refetch()
-          toast.success(`Product reported by ${rep.name} has been deleted successfully`)
+          toast.success(`Product reported by ${rep.buyerEmail} has been deleted successfully`)
         }
       })
   }
