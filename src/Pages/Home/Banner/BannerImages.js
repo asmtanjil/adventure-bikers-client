@@ -8,21 +8,10 @@ const BannerImages = ({ bannerItem }) => {
       <div className="carousel-img">
         <img src={image} alt='' className="w-full rounded-xl" />
       </div>
-      {/* <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-1/4">
-              <h1 className='text-6xl font-bold text-white'>
-                Affordable <br />
-                Price For Car <br />
-                Servicing
-              </h1>
-            </div> */}
       <div className="absolute flex justify-start w-4/5 transform -translate-y-1/2 left-24 top-1/2">
-        <p className='text-white text-lg lg:text-2xl'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+        <p className='text-white text-lg lg:text-2xl'>You are on your own. You are not protected by two tons of steel, rubber, foam padding and safety glass. Neither are you steering two tons of guided missile toward other cars, people and property. Riding is an art as well as a craft and no amount of explanation can take the place of experience</p>
       </div>
 
-      {/* <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4">
-        <button className="btn btn-warning mr-5">Success</button>
-        <button className="btn btn-outline btn-warning mr-5">Error</button>
-      </div> */}
       <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
         <a href={`#slide${prev}`} className="btn btn-circle mr-5">❮</a>
         <a href={`#slide${next}`} className="btn btn-circle mr-5">❯</a>

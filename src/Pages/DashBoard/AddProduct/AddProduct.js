@@ -40,7 +40,7 @@ const AddProduct = () => {
             email: user?.email,
             time: time
           }
-          fetch('http://localhost:5000/products', {
+          fetch('https://adventure-bikers-server.vercel.app/products', {
             method: "POST",
             headers: {
               'content-type': 'application/json'
@@ -61,7 +61,7 @@ const AddProduct = () => {
 
   return (
     <div className='mx-auto my-12'>
-      <h2 className='text-center text-3xl'>Add a Product</h2>
+      <h2 className='text-center text-3xl my-8'>Add a Product</h2>
 
       <div className='flex justify-center items-center'>
         <form onSubmit={handleSubmit(handleAddProduct)} className='w-96 p-8'>

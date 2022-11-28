@@ -7,7 +7,7 @@ const AllBuyers = () => {
   const { data: buyers, isLoading, refetch } = useQuery({
     queryKey: ['buyers'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/users/buyer')
+      const res = await fetch('https://adventure-bikers-server.vercel.app/users/buyer')
       const data = res.json()
       return data;
     }
@@ -15,7 +15,7 @@ const AllBuyers = () => {
 
 
   const handleDeleteBuyer = buyer => {
-    fetch(`http://localhost:5000/users/${buyer._id}`, {
+    fetch(`https://adventure-bikers-server.vercel.app/users/${buyer._id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
@@ -34,7 +34,7 @@ const AllBuyers = () => {
 
   return (
     <div className='mx-auto my-12' >
-      <h2 className='text-2xl text-center'>All Buyers</h2>
+      <h2 className='text-2xl text-center my-8'>All Buyers</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

@@ -8,7 +8,7 @@ const Category = () => {
   const { data: categories, isLoading } = useQuery({
     queryKey: ['categories'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/categories')
+      const res = await fetch('https://adventure-bikers-server.vercel.app/categories')
       const data = await res.json()
       return data;
     }

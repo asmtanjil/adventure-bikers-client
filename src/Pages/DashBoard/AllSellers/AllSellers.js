@@ -2,13 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../../Loading/Loading';
+import { MdVerified } from "react-icons/md";
 
 const AllSellers = () => {
 
   const { data: sellers, isLoading, refetch } = useQuery({
     queryKey: ['sellers'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/users/seller')
+      const res = await fetch('https://adventure-bikers-server.vercel.app/users/seller')
       const data = res.json()
       return data;
     }
@@ -16,7 +17,7 @@ const AllSellers = () => {
 
 
   const handleDeleteSeller = seller => {
-    fetch(`http://localhost:5000/users/${seller._id}`, {
+    fetch(`https://adventure-bikers-server.vercel.app/users/${seller._id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
@@ -31,7 +32,7 @@ const AllSellers = () => {
 
 
   const handleVerifySeller = seller => {
-    fetch(`http://localhost:5000/verifySeller/${seller.email}`, {
+    fetch(`https://adventure-bikers-server.vercel.app/verifySeller/${seller.email}`, {
       method: "PUT"
     })
       .then(res => res.json())
@@ -50,7 +51,7 @@ const AllSellers = () => {
 
   return (
     <div className='mx-auto my-12'>
-      <h2 className='text-2xl text-center'>All Buyers</h2>
+      <h2 className='text-2xl text-center my-8'>All Buyers</h2>
       <table className="table w-full">
         <thead>
           <tr>
@@ -63,7 +64,9 @@ const AllSellers = () => {
         </thead>
         <tbody>
           {
-            sellers && sellers.map((seller, i) => <tr>
+            sellers && sellers.map((seller, i) => <tr
+              key={seller._id}
+            >
               <th>{i + 1}</th>
               <td>{seller.name}</td>
               <td>{seller.email}</td>
@@ -71,11 +74,19 @@ const AllSellers = () => {
                 onClick={() => handleDeleteSeller(seller)}
                 className='btn btn-xs btn-error text-white'>Delete Seller</button></td>
               {
-                seller?.isVerified !== 'true' && <>
-                  <td><button
-                    className='btn btn-xs btn-accent text-white'
-                    onClick={() => handleVerifySeller(seller)}>Verify</button></td>
-                </>
+                seller?.isVerified === 'true' ?
+                  <>
+                    <td>
+                      <button className='btn btn-xs btn-success text-white flex gap-2'><MdVerified className='text-blue-600'></MdVerified> Verified</button>
+                    </td>
+                  </>
+                  :
+                  <>
+                    <td><button
+                      className='btn btn-xs btn-accent text-white'
+                      onClick={() => handleVerifySeller(seller)}>Verify</button>
+                    </td>
+                  </>
               }
             </tr>)
           }

@@ -5,6 +5,7 @@ import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/DashBoard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/DashBoard/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/DashBoard/AllSellers/AllSellers";
+import MyDashboard from "../../Pages/DashBoard/MyDashboard/MyDashboard";
 import MyOrders from "../../Pages/DashBoard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/DashBoard/MyProducts/MyProducts";
 import Error from "../../Pages/Error/Error";
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:name',
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/products/${params.name}`)
+          return fetch(`https://adventure-bikers-server.vercel.app/products/${params.name}`)
         },
         element: <PrivateRouter><Products></Products></PrivateRouter>
       },
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: <MyOrders></MyOrders>
+        element: <MyDashboard></MyDashboard>
       },
       {
         path: '/dashboard/myOrders',

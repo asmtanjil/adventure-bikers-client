@@ -1,12 +1,16 @@
 # Getting Started with the Tourism Service Related Website created By Me
 
-Visit Directly through this Live Site Link Of my Project [Travel With Tanjil](https://altitute-trekker.web.app/).
+Visit Directly through this Live Site Link Of my Project [Travel With Tanjil](https://adventure-biker.web.app/).
 
-## Live Site Link: https://altitute-trekker.web.app/
+## Live Site Link: https://adventure-biker.web.app/
 
-## Code Link of Github Client Site Repo: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-asmtanjil
+## Code Link of Client Site Repo: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-asmtanjil
 
-## Code Link of Github Server Site Repo: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-asmtanjil
+## Code Link of Server Site Repo: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-asmtanjil
+
+## adminEmail : asm.tanjil@gmail.com
+
+## adminPassword : Ph4545
 
 ### `Technology I used For This Website`
 

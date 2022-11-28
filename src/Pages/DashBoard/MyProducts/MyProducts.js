@@ -11,14 +11,14 @@ const MyProducts = () => {
   const { data: myProducts = [], isLoading, refetch } = useQuery({
     queryKey: ['myProducts'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/products?email=${user?.email}`)
+      const res = await fetch(`https://adventure-bikers-server.vercel.app/products?email=${user?.email}`)
       const data = await res.json()
       return data
     }
   })
 
   const handleDeleteProduct = myProduct => {
-    fetch(`http://localhost:5000/myProducts/${myProduct._id}`, {
+    fetch(`https://adventure-bikers-server.vercel.app/myProducts/${myProduct._id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
