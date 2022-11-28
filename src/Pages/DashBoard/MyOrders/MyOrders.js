@@ -20,7 +20,7 @@ const MyOrders = () => {
   }
 
   return (
-    <div className='my-12 bg-sky-50'>
+    <div className='my-12'>
       <h2 className='text-center text-3xl my-8'>My Products</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
