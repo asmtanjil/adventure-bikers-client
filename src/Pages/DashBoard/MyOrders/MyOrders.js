@@ -9,7 +9,11 @@ const MyOrders = () => {
   const { data: bookings, isLoading } = useQuery({
     queryKey: ['bookings', user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://adventure-bikers-server.vercel.app/bookings?email=${user?.email}`)
+      const res = await fetch(`https://adventure-bikers-server.vercel.app/bookings?email=${user?.email}`, {
+        headers: {
+          authorization: `bearer ${localStorage.getItem('accessToken')}`
+        }
+      })
       const data = await res.json()
       return data
     }
@@ -21,7 +25,7 @@ const MyOrders = () => {
 
   return (
     <div className='my-12'>
-      <h2 className='text-center text-3xl my-8'>My Products</h2>
+      <h2 className='text-center text-3xl my-8'>My Orders</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

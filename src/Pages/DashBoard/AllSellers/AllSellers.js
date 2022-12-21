@@ -16,6 +16,8 @@ const AllSellers = () => {
   })
 
 
+  //All Seller
+
   const handleDeleteSeller = seller => {
     fetch(`https://adventure-bikers-server.vercel.app/users/${seller._id}`, {
       method: "DELETE"
