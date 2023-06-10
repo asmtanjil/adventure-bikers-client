@@ -23,7 +23,7 @@ const Banner = () => {
     }
   ]
   return (
-    <div className="carousel w-full my-12">
+    <div className="carousel w-full py-16">
       {
         bannerItems.map(bannerItem => <BannerImages
           key={bannerItem.id}

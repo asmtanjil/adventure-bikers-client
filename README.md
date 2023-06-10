@@ -8,7 +8,7 @@ Visit Directly through this Live Site Link Of my Project [Adventure-Bikers](http
 
 ## Code Link of Server Site Repo: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-asmtanjil
 
-## adminEmail : asm.tanjil@gmail.com
+## adminEmail : asm.*****@gmail.com
 
 ## adminPassword : Ph4545
 

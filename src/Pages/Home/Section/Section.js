@@ -3,75 +3,19 @@ import React from 'react';
 
 const Section = () => {
   return (
-    <div className='my-12'>
-      <h2 className="text-4xl font-bold my-8 p-4 text-center">Albums, Reviews & Ratings</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+    <div className='pb-16 bg-orange-100'>
+      <h2 className="text-5xl font-bold py-16 px-8 text-center uppercase tracking-wider">Sold bike's Photo album</h2>
 
-        <div>
-          <div className="card  bg-base-100 flex justify-between shadow-xl">
-            <figure><img src="https://i.ibb.co/10HF8JH/buy-4.jpg" alt="Album" className='p-6' style={{ height: 600 }} /></figure>
-            <div className="card-body">
-              <h2 className="card-title">Took That Bike!</h2>
-              <div className='flex justify-center items-center font-semibold'>
-                <p>Model: Yamaha MT-15</p>
-                <p>Price: 250000 Bdt</p>
-                <p>Rating: 4.8</p>
-              </div>
-              <p>Review: Their service was really amazing. I got an authentic bike and the service of that bike is better than I expected</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div>
-          <div className="card  bg-base-100 flex justify-between shadow-xl">
-            <figure><img src="https://i.ibb.co/wBHpCDq/buy-2.jpg" alt="Album" className='p-6' style={{ height: 600 }} /></figure>
-            <div className="card-body">
-              <h2 className="card-title">Took That Bike!</h2>
-              <div className='flex justify-center items-center font-semibold'>
-                <p>Model: Suzuki Intruder</p>
-                <p>Price: 250000 Bdt</p>
-                <p>Rating: 4.8</p>
-              </div>
-              <p>Review: Their service was really amazing. I got an authentic bike and the service of that bike is better than I expected</p>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div>
-          <div className="card  bg-base-100 flex justify-between shadow-xl">
-            <figure><img src="https://i.ibb.co/HpSJzH4/buy-5.jpg" alt="Album" className='p-6' style={{ height: 600 }} /></figure>
-            <div className="card-body">
-              <h2 className="card-title">Took That Bike!</h2>
-              <div className='flex justify-center items-center font-semibold'>
-                <p>Model: Yamaha XSR 150</p>
-                <p>Price: 250000 Bdt</p>
-                <p>Rating: 4.8</p>
-              </div>
-              <p>Review: Their service was really amazing. I got an authentic bike and the service of that bike is better than I expected</p>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div>
-          <div className="card  bg-base-100 flex justify-between shadow-xl">
-            <figure><img src="https://i.ibb.co/HFw6T45/buy-3.jpg" alt="Album" className='p-6' style={{ height: 600 }} /></figure>
-            <div className="card-body">
-              <h2 className="card-title">Took That Bike!</h2>
-              <div className='flex justify-center items-center font-semibold'>
-                <p>Model: Bajaj Cruiser</p>
-                <p>Price: 250000 Bdt</p>
-                <p>Rating: 4.8</p>
-              </div>
-              <p>Review: Their service was really amazing. I got an authentic bike and the service of that bike is better than I expected</p>
-            </div>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="https://i.ibb.co/10HF8JH/buy-4.jpg" alt="Album" className='' style={{ width: '100%' }} />
+        <img src="https://i.ibb.co/wBHpCDq/buy-2.jpg" alt="Album" className='' style={{ width: '100%' }} />
+        <img src="https://i.ibb.co/HpSJzH4/buy-5.jpg" alt="Album" className='' style={{ width: '100%' }} />
+        <img src="https://i.ibb.co/HFw6T45/buy-3.jpg" alt="Album" className='' style={{ width: '100%' }} />
+        <img src="https://i.ibb.co/HFw6T45/buy-3.jpg" alt="Album" className='' style={{ width: '100%' }} />
+        <img src="https://i.ibb.co/HFw6T45/buy-3.jpg" alt="Album" className='' style={{ width: '100%' }} />
       </div>
+
+
     </div>
   );
 };
