@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaWhatsapp, FaPinterest, FaTwitter, FaStar, FaRegStarHalfStroke, FaRegStar } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaPinterest, FaTwitter, FaStar, FaRegStar } from 'react-icons/fa';
 
 const Reviews = () => {
   return (
